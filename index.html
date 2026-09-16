@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paula Henriques — Psicóloga Clínica e da Saúde, Psicoterapeuta e Psicanalista. Consultas em Odivelas e online.">
+  <title>Paula Henriques | Psicologia Clínica</title>
+
+  <style>
+    :root{
+      --ink:#302522;
+      --ink-soft:#594845;
+      --cream:#f5eee8;
+      --sand:#e8d8ce;
+      --rose:#b8787d;
+      --rose-dark:#82565b;
+      --dust:#d8b8b5;
+      --wine:#543b3d;
+      --paper:#fffaf6;
+      --line:rgba(48,37,34,.13);
+      --shadow:0 25px 80px rgba(55,38,34,.14);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+      background:
+        radial-gradient(circle at 10% 20%,rgba(184,120,125,.10),transparent 25%),
+        radial-gradient(circle at 90% 55%,rgba(216,184,181,.16),transparent 30%);
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1160px,91%);
+      margin:auto;
+    }
+
+    nav{
+      position:fixed;
+      top:14px;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(1120px,92%);
+      z-index:30;
+      padding:12px 15px;
+      border:1px solid rgba(255,255,255,.6);
+      border-radius:22px;
+      background:rgba(250,244,239,.78);
+      backdrop-filter:blur(22px);
+      box-shadow:0 12px 40px rgba(55,38,34,.08);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-family:Georgia,serif;
+      font-size:20px;
+      line-height:1.05;
+    }
+
+    .logo span{
+      display:block;
+      font-family:Inter,sans-serif;
+      font-size:8px;
+      letter-spacing:.27em;
+      text-transform:uppercase;
+      color:var(--rose-dark);
+      margin-top:4px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:26px;
+      font-size:12px;
+      color:var(--ink-soft);
+    }
+
+    .nav-links a:hover{
+      color:var(--rose-dark);
+    }
+
+    .nav-cta,
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      padding:12px 19px;
+      font-size:12px;
+      font-weight:700;
+      transition:.25s ease;
+    }
+
+    .nav-cta{
+      background:var(--wine);
+      color:white;
+    }
+
+    .nav-cta:hover,
+    .btn-dark:hover{
+      transform:translateY(-2px);
+      background:#3c292b;
+    }
+
+    .hero{
+      min-height:100vh;
+      padding:150px 0 90px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:75px;
+      align-items:center;
+      position:relative;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      background:var(--sand);
+      right:-230px;
+      top:70px;
+      z-index:-1;
+    }
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:9px;
+      color:var(--rose-dark);
+      font-weight:800;
+      margin-bottom:20px;
+    }
+
+    .eyebrow:before{
+      content:"";
+      width:35px;
+      height:1px;
+      background:var(--rose);
+    }
+
+    h1{
+      font-family:Georgia,serif;
+      font-weight:400;
+      font-size:clamp(54px,7vw,88px);
+      line-height:.94;
+      letter-spacing:-.055em;
+      margin-bottom:27px;
+    }
+
+    h1 em,
+    h2 em{
+      color:var(--rose-dark);
+      font-style:italic;
+    }
+
+    .hero-copy{
+      max-width:555px;
+      color:var(--ink-soft);
+      font-size:16px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:11px;
+      flex-wrap:wrap;
+      margin-top:31px;
+    }
+
+    .btn-dark{
+      background:var(--wine);
+      color:#fff;
+    }
+
+    .btn-light{
+      border:1px solid var(--line);
+      background:rgba(255,250,246,.6);
+    }
+
+    .btn-light:hover{
+      background:white;
+      transform:translateY(-2px);
+    }
+
+    .hero-art{
+      height:570px;
+      position:relative;
+    }
+
+    .photo-back{
+      position:absolute;
+      width:410px;
+      height:485px;
+      right:18px;
+      top:5px;
+      border-radius:220px 220px 40px 40px;
+      background:#d6b4b0;
+      transform:rotate(4deg);
+      box-shadow:var(--shadow);
+    }
+
+    .photo-frame{
+      position:absolute;
+      width:390px;
+      height:485px;
+      right:48px;
+      top:-15px;
+      border-radius:210px 210px 38px 38px;
+      overflow:hidden;
+      background:#d9c1b8;
+      box-shadow:var(--shadow);
+      border:8px solid rgba(255,250,246,.72);
+    }
+
+    .photo-frame img{
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+      filter:saturate(.92) contrast(.98);
+    }
+
+    .photo-frame:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(50,35,32,.58),transparent 34%);
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .photo-caption{
+      position:absolute;
+      left:25px;
+      right:20px;
+      bottom:22px;
+      z-index:3;
+      color:white;
+    }
+
+    .photo-caption strong{
+      display:block;
+      font-family:Georgia,serif;
+      font-size:25px;
+      font-weight:400;
+      line-height:1.1;
+    }
+
+    .photo-caption span{
+      font-size:9px;
+      letter-spacing:.05em;
+      color:rgba(255,255,255,.82);
+    }
+
+    .hero-note{
+      position:absolute;
+      left:8px;
+      bottom:0;
+      background:rgba(255,250,246,.96);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.85);
+      padding:15px 20px;
+      border-radius:18px;
+      box-shadow:0 18px 45px rgba(50,35,32,.13);
+      z-index:8;
+      max-width:245px;
+    }
+
+    .hero-note strong{
+      display:block;
+      font-family:Georgia,serif;
+      font-size:22px;
+      font-weight:400;
+    }
+
+    .hero-note span{
+      font-size:10px;
+      color:var(--ink-soft);
+    }
+
+    section{
+      padding:110px 0;
+      position:relative;
+    }
+
+    .about{
+      background:var(--wine);
+      color:#fff;
+    }
+
+    .about:before{
+      content:"";
+      position:absolute;
+      width:390px;
+      height:390px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:50%;
+      left:-170px;
+      top:-100px;
+      box-shadow:0 0 0 75px rgba(255,255,255,.025);
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:90px;
+      align-items:start;
+    }
+
+    .section-kicker{
+      text-transform:uppercase;
+      letter-spacing:.21em;
+      color:var(--rose);
+      font-size:9px;
+      font-weight:800;
+      margin-bottom:15px;
+    }
+
+    h2{
+      font-family:Georgia,serif;
+      font-size:clamp(40px,5vw,60px);
+      font-weight:400;
+      line-height:1.03;
+      letter-spacing:-.035em;
+    }
+
+    .quote{
+      font-family:Georgia,serif;
+      font-size:31px;
+      line-height:1.28;
+      color:#f0d7d1;
+      border-left:2px solid var(--rose);
+      padding-left:24px;
+      margin-top:20px;
+    }
+
+    .about-text p{
+      color:rgba(255,255,255,.69);
+      margin:20px 0;
+      font-size:14px;
+      max-width:670px;
+    }
+
+    .credentials{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin-top:30px;
+    }
+
+    .credential{
+      padding:17px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      background:rgba(255,255,255,.055);
+    }
+
+    .credential strong{
+      display:block;
+      font-size:12px;
+    }
+
+    .credential span{
+      font-size:10px;
+      color:rgba(255,255,255,.55);
+    }
+
+    .section-head{
+      max-width:720px;
+      margin-bottom:48px;
+    }
+
+    .section-head p{
+      color:var(--ink-soft);
+      margin-top:17px;
+      font-size:14px;
+    }
+
+    .areas-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
+    .area{
+      min-height:185px;
+      padding:28px;
+      background:rgba(255,250,246,.56);
+      border:1px solid var(--line);
+      border-radius:24px;
+      transition:.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .area:after{
+      content:"";
+      position:absolute;
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      right:-45px;
+      bottom:-45px;
+      background:rgba(184,120,125,.14);
+    }
+
+    .area:hover{
+      transform:translateY(-5px);
+      background:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .area-number{
+      font-size:9px;
+      color:var(--rose-dark);
+      letter-spacing:.18em;
+      font-weight:800;
+    }
+
+    .area h3{
+      font-family:Georgia,serif;
+      font-size:24px;
+      font-weight:400;
+      margin:30px 0 6px;
+    }
+
+    .area p{
+      font-size:11px;
+      color:var(--ink-soft);
+      max-width:220px;
+    }
+
+    .services{
+      background:#e5d4cb;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:17px;
+    }
+
+    .service{
+      background:rgba(255,250,246,.72);
+      border:1px solid rgba(48,37,34,.1);
+      padding:31px;
+      border-radius:24px;
+      min-height:230px;
+      position:relative;
+    }
+
+    .service:before{
+      content:"";
+      display:block;
+      width:35px;
+      height:2px;
+      background:var(--rose);
+      margin-bottom:25px;
+    }
+
+    .service h3{
+      font-family:Georgia,serif;
+      font-size:25px;
+      font-weight:400;
+    }
+
+    .price{
+      font-size:28px;
+      margin:20px 0 2px;
+    }
+
+    .price small{
+      font-size:11px;
+      color:var(--ink-soft);
+    }
+
+    .service p{
+      font-size:12px;
+      color:var(--ink-soft);
+    }
+
+    .contact{
+      background:var(--ink);
+      color:#fff;
+      overflow:hidden;
+    }
+
+    .contact:before{
+      content:"";
+      position:absolute;
+      width:620px;
+      height:620px;
+      border-radius:50%;
+      right:-240px;
+      top:-210px;
+      background:radial-gradient(circle,rgba(184,120,125,.28),transparent 64%);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:80px;
+      align-items:end;
+      position:relative;
+      z-index:1;
+    }
+
+    .contact h2{
+      color:#fff;
+      max-width:680px;
+    }
+
+    .contact p{
+      color:rgba(255,255,255,.64);
+      max-width:560px;
+      margin-top:20px;
+      font-size:14px;
+    }
+
+    .whatsapp{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      background:#fff;
+      color:var(--ink);
+      padding:16px 23px;
+      border-radius:999px;
+      margin-top:29px;
+      font-weight:800;
+      font-size:13px;
+      transition:.25s;
+    }
+
+    .whatsapp:hover{
+      transform:translateY(-3px);
+      box-shadow:0 15px 40px rgba(0,0,0,.25);
+    }
+
+    .contact-info{
+      border-left:1px solid rgba(255,255,255,.15);
+      padding-left:30px;
+    }
+
+    .contact-info div{
+      margin-bottom:24px;
+      font-size:13px;
+    }
+
+    .contact-info small{
+      display:block;
+      color:rgba(255,255,255,.4);
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      margin-bottom:5px;
+    }
+
+    footer{
+      padding:26px 0;
+      background:#251c1d;
+      color:rgba(255,255,255,.45);
+      font-size:10px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      gap:9px;
+      background:#25D366;
+      color:white;
+      padding:14px 19px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      box-shadow:0 12px 30px rgba(0,0,0,.22);
+      transition:.25s;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-3px);
+    }
+
+    @media(max-width:850px){
+
+      nav{
+        top:8px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        gap:25px;
+        padding-top:130px;
+      }
+
+      .hero-art{
+        height:485px;
+      }
+
+      .art-back{
+        width:330px;
+        height:410px;
+        right:5px;
+      }
+
+      .art-front{
+        width:315px;
+        height:410px;
+        right:28px;
+      }
+
+      .photo-back{
+        width:330px;
+        height:390px;
+        right:5px;
+      }
+
+      .photo-frame{
+        width:315px;
+        height:390px;
+        right:28px;
+      }
+
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+      }
+
+      .areas-grid,
+      .services-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px){
+
+      section{
+        padding:78px 0;
+      }
+
+      .hero{
+        padding-bottom:50px;
+      }
+
+      .hero-art{
+        height:415px;
+      }
+
+      .photo-back{
+        width:275px;
+        height:325px;
+        right:0;
+      }
+
+      .photo-frame{
+        width:265px;
+        height:330px;
+        right:18px;
+      }
+
+      .credentials,
+      .areas-grid,
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+
+      .contact-info{
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.15);
+        padding:25px 0 0;
+      }
+
+      .whatsapp-float{
+        right:13px;
+        bottom:13px;
+        padding:13px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">
+      Paula Henriques
+      <span>Psicologia Clínica</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#sobre">Sobre mim</a>
+      <a href="#areas">Acompanhamento</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contactos">Contactos</a>
+    </div>
+
+    <a class="nav-cta whatsapp-link" href="#">
+      Marcar consulta
+    </a>
+
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero container">
+
+    <div>
+
+      <div class="eyebrow">
+        Psicologia Clínica · Odivelas · Online
+      </div>
+
+      <h1>
+        Um espaço para<br>
+        <em>se ouvir.</em>
+      </h1>
+
+      <p class="hero-copy">
+        Um acompanhamento psicológico baseado na escuta,
+        confiança e respeito pela história única de cada pessoa.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-dark" href="#servicos">
+          Quero marcar uma consulta
+        </a>
+
+        <a class="btn btn-light" href="#sobre">
+          Conhecer a Paula
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-art" aria-label="Fotografia de Paula Henriques">
+
+      <div class="photo-back"></div>
+
+      <div class="photo-frame">
+
+        <!-- FOTO DO GITHUB -->
+        <img
+          src="IMG_0508.jpeg"
+          alt="Paula Henriques — Psicóloga Clínica"
+        >
+
+        <div class="photo-caption">
+          <strong>Paula Henriques</strong>
+          <span>
+            Psicóloga Clínica · Psicoterapeuta · Psicanalista
+          </span>
+        </div>
+
+      </div>
+
+      <div class="hero-note">
+        <strong>Desde 2006</strong>
+        <span>Experiência em acompanhamento clínico</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="about" id="sobre">
+
+    <div class="container about-grid">
+
+      <div>
+
+        <div class="section-kicker">
+          Sobre mim
+        </div>
+
+        <div class="quote">
+          “Cada pessoa tem uma história única.”
+        </div>
+
+      </div>
+
+      <div class="about-text">
+
+        <h2>
+          Escuta. Confiança.
+          <em>Um novo olhar.</em>
+        </h2>
+
+        <p>
+          Sou Psicóloga Clínica e da Saúde, Psicoterapeuta e Psicanalista,
+          com atividade clínica desde 2006. Acredito que a psicoterapia
+          deve ser um espaço de confiança, respeito e escuta.
+        </p>
+
+        <p>
+          Trabalho com adolescentes e adultos, procurando adaptar o
+          acompanhamento às necessidades específicas de cada pessoa,
+          com uma abordagem ética, humanista e baseada na evidência científica.
+        </p>
+
+        <div class="credentials">
+
+          <div class="credential">
+            <strong>Psicóloga Clínica</strong>
+            <span>
+              Especialista em Psicologia Clínica e da Saúde · OPP n.º 8038
+            </span>
+          </div>
+
+          <div class="credential">
+            <strong>Psicoterapeuta</strong>
+            <span>
+              Psicoterapia Psicanalítica
+            </span>
+          </div>
+
+          <div class="credential">
+            <strong>Mestre</strong>
+            <span>
+              Psicologia Comunitária · ISPA
+            </span>
+          </div>
+
+          <div class="credential">
+            <strong>Psicanalista</strong>
+            <span>
+              APPPP
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="areas">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-kicker">
+          Acompanhamento
+        </div>
+
+        <h2>
+          Um acompanhamento pensado para
+          <em>si.</em>
+        </h2>
+
+        <p>
+          O acompanhamento é adaptado à história,
+          necessidades e objetivos de cada pessoa.
+        </p>
+
+      </div>
+
+      <div class="areas-grid">
+
+        <article class="area">
+          <span class="area-number">01</span>
+          <h3>Ansiedade & Stress</h3>
+          <p>
+            Espaço para compreender e trabalhar situações de ansiedade e stress.
+          </p>
+        </article>
+
+        <article class="area">
+          <span class="area-number">02</span>
+          <h3>Depressão</h3>
+          <p>
+            Acompanhamento psicológico individualizado.
+          </p>
+        </article>
+
+        <article class="area">
+          <span class="area-number">03</span>
+          <h3>Burnout</h3>
+          <p>
+            Para momentos de exaustão e sobrecarga.
+          </p>
+        </article>
+
+        <article class="area">
+          <span class="area-number">04</span>
+          <h3>Luto</h3>
+          <p>
+            Apoio durante processos de perda e adaptação.
+          </p>
+        </article>
+
+        <article class="area">
+          <span class="area-number">05</span>
+          <h3>Relações</h3>
+          <p>
+            Reflexão sobre dificuldades relacionais e emocionais.
+          </p>
+        </article>
+
+        <article class="area">
+          <span class="area-number">06</span>
+          <h3>Autoestima</h3>
+          <p>
+            Trabalho sobre a relação consigo própria e desenvolvimento pessoal.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="services" id="servicos">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-kicker">
+          Serviços
+        </div>
+
+        <h2>
+          Um espaço seguro para cuidar de
+          <em>si.</em>
+        </h2>
+
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service">
+
+          <h3>
+            Psicologia Clínica
+          </h3>
+
+          <div class="price">
+            70€ <small>/ consulta</small>
+          </div>
+
+          <p>
+            Acompanhamento psicológico individual.
+          </p>
+
+        </article>
+
+
+        <article class="service">
+
+          <h3>
+            Psicoterapia
+          </h3>
+
+          <div class="price">
+            70€ <small>/ consulta</small>
+          </div>
+
+          <p>
+            Processo psicoterapêutico personalizado.
+          </p>
+
+        </article>
+
+
+        <article class="service">
+
+          <h3>
+            Psicanálise
+          </h3>
+
+          <div class="price">
+            70€ <small>/ consulta</small>
+          </div>
+
+          <p>
+            Espaço de reflexão e exploração da experiência pessoal.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="contactos" class="contact">
+
+    <div class="container contact-grid">
+
+      <div>
+
+        <div class="section-kicker">
+          Marcação
+        </div>
+
+        <h2>
+          Dar o primeiro passo pode começar
+          por uma simples mensagem.
+        </h2>
+
+        <p>
+          Consultas em Odivelas e acompanhamento online.
+          Envie uma mensagem para saber mais informações
+          ou marcar uma consulta.
+        </p>
+
+        <a
+          class="whatsapp whatsapp-link"
+          href="#"
+        >
+          💬 &nbsp; Quero marcar uma consulta
+        </a>
+
+      </div>
+
+
+      <div class="contact-info">
+
+        <div>
+          <small>Localização</small>
+          Praceta Marquesa de Alorna, Odivelas
+        </div>
+
+        <div>
+          <small>Modalidade</small>
+          Consultório · Consultas online
+        </div>
+
+        <div>
+          <small>Contacto</small>
+          WhatsApp para marcações
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <span>
+      © 2026 Paula Henriques · Psicologia Clínica
+    </span>
+
+    <span>
+      Site profissional
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const whatsappNumber = "351914874135";
+  const whatsappMessage = "Quero marcar uma consulta";
+
+  document
+    .querySelectorAll(".whatsapp-link")
+    .forEach(link => {
+
+      link.href =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    });
+
+</script>
+
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/351914874135?text=Quero%20marcar%20uma%20consulta"
+  target="_blank"
+  rel="noopener"
+>
+  <span class="wa-icon">💬</span>
+  WhatsApp · Marcar consulta
+</a>
+
+</body>
+</html>
